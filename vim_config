@@ -1,0 +1,84 @@
+set nocompatible               " dump the old fashioned vi support!
+set nowrap        " don't wrap lines
+set tabstop=4     " a tab is four spaces
+set autoindent    " always set autoindenting on
+set copyindent    " copy the previous indentation on autoindenting
+
+set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
+set smartcase     " ignore case if search pattern is all lowercase,
+                  "    case-sensitive otherwise
+set smarttab      " insert tabs on the start of a line according to
+                  "    shiftwidth, not tabstop
+
+set backspace=indent,eol,start " allow backspacing over everything in insert mode
+set backup                     " keep a backup file
+set backupdir=~/.backup        " custom backup directory
+
+set ruler                      " show the cursor position all the time
+set showcmd                    " display incomplete commands
+set mouse=a                    " enable the mouse
+set lazyredraw                 " don't update the display while executing macros
+set showmode                   " so you know what mode you are in
+set laststatus=2               " always put a status line in.
+set scrolloff=10               " start scrolling 10 lines from the top/bottom
+set ch=2                       " set command line 2 lines high
+set nowrap                     " no line wrapping 
+set shiftwidth=4               " round indent actions to multiple of 2
+set softtabstop=4              " soft tabs = 2 spaces 
+
+set expandtab                  " expand tabs to spaces
+set incsearch                  " do incremental searching
+set hlsearch                   " highlight search terms
+set ignorecase                 " case insensitive search
+set gdefault                   " replace all instances on line when doing global search/replace
+set number                     " enable line numbers
+set showmatch                  " show matching parenthesis
+set hidden                     " allow hidden buffers with unsaved changes
+set whichwrap+=<,>,[,]         " allow arrow keys to line wrap
+set wildmenu                   " enable enhanced command line completion
+set ttyfast                    " faster terminal updates
+set virtualedit+=block         " allow virtual-block select to go past end of lines
+
+syntax on                      " enable syntax highlighting
+filetype plugin indent on      " enable file type detection
+
+
+set history=1000         " remember more commands and search history
+set undolevels=1000      " use many muchos levels of undo
+set wildignore=*.swp,*.bak,*.pyc,*.class
+set title                " change the terminal's title
+set visualbell           " don't beep
+set noerrorbells         " don't beep
+
+function! Headers()
+    r~/.vim/cpptemplate.cpp
+endfunction
+
+function! LinkList()
+    r~/.vim/linkList.cpp
+endfunction
+
+function! DLinkList()
+    r~/.vim/dll.cpp
+endfunction
+
+function! CodeChef()
+    r~/.vim/codeChef.cpp
+endfunction
+
+function! CodeJam()
+    r~/.vim/codeJam.cpp
+endfunction
+
+function! HackerRank()
+    " ~/.vim/linkList.cpp is the path to the template file
+    r~/.vim/hackerRank.cpp
+endfunction
+
+"autocmd BufNewFile co*.cpp call CodeChef()
+autocmd BufNewFile *.cpp call HackerRank()
+"autocmd BufNewFile jam*.cpp call CodeJam()
+
+
+"set cul
+"hi CursorLine term=none cterm=none ctermbg=3
