@@ -50,35 +50,12 @@ set title                " change the terminal's title
 set visualbell           " don't beep
 set noerrorbells         " don't beep
 
-function! Headers()
-    r~/.vim/cpptemplate.cpp
+function! Header()
+    "path to file
+    r~/headerfile
 endfunction
 
-function! LinkList()
-    r~/.vim/linkList.cpp
-endfunction
-
-function! DLinkList()
-    r~/.vim/dll.cpp
-endfunction
-
-function! CodeChef()
-    r~/.vim/codeChef.cpp
-endfunction
-
-function! CodeJam()
-    r~/.vim/codeJam.cpp
-endfunction
-
-function! HackerRank()
-    " ~/.vim/linkList.cpp is the path to the template file
-    r~/.vim/hackerRank.cpp
-endfunction
-
-"autocmd BufNewFile co*.cpp call CodeChef()
-autocmd BufNewFile *.cpp call HackerRank()
-"autocmd BufNewFile jam*.cpp call CodeJam()
-
+autocmd BufNewFile *.cpp call Header()
 
 "set cul
 "hi CursorLine term=none cterm=none ctermbg=3
